@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -13,7 +13,9 @@ import { useNavigate } from "react-router-dom";
 const LoginSignup = () => {
   const navigate = useNavigate();
 
-  const { loading, error } = useSelector((state) => state.userReducer);
+  const { loading, error, isAthenticated } = useSelector(
+    (state) => state.userReducer
+  );
 
   const [showPassword, setShowPassword] = useState(false);
   const [openLogin, setOpenLogin] = useState(true);
@@ -84,6 +86,12 @@ const LoginSignup = () => {
       dispatch(userRegister(signupData));
     }
   };
+
+  useEffect(() => {
+    if (isAthenticated) {
+      navigate("/");
+    }
+  }, [isAthenticated, navigate]);
 
   return (
     <>
