@@ -12,7 +12,9 @@ export const getProducts = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_PRODUCTS_GET_REQUEST });
 
-    const { data } = await axios.get("/api/products");
+    const { data } = await axios.get(
+      "https://eshop-server-ni0p.onrender.com/api/products"
+    );
 
     dispatch({ type: ALL_PRODUCTS_GET_SUCCESS, payload: data });
   } catch (error) {
@@ -27,7 +29,9 @@ export const getProduct = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_GET_REQUEST });
 
-    const { data } = await axios.get(`/api/product/${id}`);
+    const { data } = await axios.get(
+      `https://eshop-server-ni0p.onrender.com/api/product/${id}`
+    );
 
     dispatch({
       type: PRODUCT_GET_SUCCESS,

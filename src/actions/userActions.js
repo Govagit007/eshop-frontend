@@ -22,7 +22,11 @@ export const userRegister = (details) => async (dispatch) => {
       },
     };
 
-    const { data } = await axios.post("/api/register", details, config);
+    const { data } = await axios.post(
+      "https://eshop-server-ni0p.onrender.com/api/register",
+      details,
+      config
+    );
     console.log(data);
 
     dispatch({ type: UESR_REGISTER_SUCCESS, payload: data });
@@ -44,7 +48,11 @@ export const userLogin = (details) => async (dispatch) => {
       },
     };
 
-    const { data } = await axios.post("/api/login", details, config);
+    const { data } = await axios.post(
+      "https://eshop-server-ni0p.onrender.com/api/login",
+      details,
+      config
+    );
 
     dispatch({ type: UESR_REGISTER_SUCCESS, payload: data });
   } catch (error) {
@@ -59,7 +67,9 @@ export const userLoad = () => async (dispatch) => {
   try {
     dispatch({ type: UESR_LOAD_REQUEST });
 
-    const { data } = await axios.get("/api/me");
+    const { data } = await axios.get(
+      "https://eshop-server-ni0p.onrender.com/api/me"
+    );
 
     dispatch({ type: UESR_LOAD_SUCCESS, payload: data });
   } catch (error) {
@@ -72,7 +82,9 @@ export const userLoad = () => async (dispatch) => {
 
 export const userLogout = () => async (dispatch) => {
   try {
-    const { data } = await axios.get("/api/logout");
+    const { data } = await axios.get(
+      "https://eshop-server-ni0p.onrender.com/api/logout"
+    );
 
     dispatch({ type: USER_LOGOUT_SUCCESS, payload: data });
   } catch (error) {
