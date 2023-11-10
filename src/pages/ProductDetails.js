@@ -22,9 +22,7 @@ import { ADD_TO_CART } from "../constants/productConstants";
 import Loader from "../components/layout/Loader";
 
 const ProductDetails = () => {
-  const { product, loading, error } = useSelector(
-    (state) => state.singleProduct
-  );
+  const { product, loading } = useSelector((state) => state.singleProduct);
 
   const { cart } = useSelector((state) => state.cart);
 

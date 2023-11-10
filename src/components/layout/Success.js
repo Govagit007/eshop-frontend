@@ -1,6 +1,6 @@
 import React from "react";
 import Alert from "@mui/material/Alert";
-import { motion as m, AnimatePresence } from "framer-motion";
+import { motion as m } from "framer-motion";
 
 const Success = ({ message }) => {
   return (

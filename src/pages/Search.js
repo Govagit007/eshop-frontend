@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getProducts } from "../actions/productActions";
 
 const Search = () => {
-  const { products, loading, error } = useSelector((state) => state.product);
+  const { products, error } = useSelector((state) => state.product);
 
   const dispatch = useDispatch();
 
