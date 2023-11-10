@@ -24,7 +24,7 @@ export const userRegister = (details) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "https://eshop-server-ni0p.onrender.com/api/register",
+      "https://eshop-server-ni0p.onrender.com/api/users/register",
       details,
       config
     );
@@ -50,7 +50,7 @@ export const userLogin = (details) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "https://eshop-server-ni0p.onrender.com/api/login",
+      "https://eshop-server-ni0p.onrender.com/api/users/login",
       details,
       config
     );
@@ -69,7 +69,7 @@ export const userLoad = () => async (dispatch) => {
     dispatch({ type: UESR_LOAD_REQUEST });
 
     const { data } = await axios.get(
-      "https://eshop-server-ni0p.onrender.com/api/me"
+      "https://eshop-server-ni0p.onrender.com/api/users/me"
     );
 
     dispatch({ type: UESR_LOAD_SUCCESS, payload: data });
@@ -84,7 +84,7 @@ export const userLoad = () => async (dispatch) => {
 export const userLogout = () => async (dispatch) => {
   try {
     const { data } = await axios.get(
-      "https://eshop-server-ni0p.onrender.com/api/logout"
+      "https://eshop-server-ni0p.onrender.com/api/users/logout"
     );
 
     dispatch({ type: USER_LOGOUT_SUCCESS, payload: data });

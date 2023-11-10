@@ -13,7 +13,7 @@ export const getProducts = () => async (dispatch) => {
     dispatch({ type: ALL_PRODUCTS_GET_REQUEST });
 
     const { data } = await axios.get(
-      "https://eshop-server-ni0p.onrender.com/api/products"
+      "https://eshop-server-ni0p.onrender.com/api/products/products"
     );
 
     dispatch({ type: ALL_PRODUCTS_GET_SUCCESS, payload: data });
@@ -30,7 +30,7 @@ export const getProduct = (id) => async (dispatch) => {
     dispatch({ type: PRODUCT_GET_REQUEST });
 
     const { data } = await axios.get(
-      `https://eshop-server-ni0p.onrender.com/api/product/${id}`
+      `https://eshop-server-ni0p.onrender.com/api/products/product/${id}`
     );
 
     dispatch({
