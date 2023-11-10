@@ -5,6 +5,7 @@ import {
   UESR_LOAD_SUCCESS,
   UESR_LOGIN_FAIL,
   UESR_LOGIN_REQUEST,
+  UESR_LOGIN_SUCCESS,
   UESR_REGISTER_FAIL,
   UESR_REGISTER_REQUEST,
   UESR_REGISTER_SUCCESS,
@@ -54,7 +55,7 @@ export const userLogin = (details) => async (dispatch) => {
       config
     );
 
-    dispatch({ type: UESR_REGISTER_SUCCESS, payload: data });
+    dispatch({ type: UESR_LOGIN_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
       type: UESR_LOGIN_FAIL,
