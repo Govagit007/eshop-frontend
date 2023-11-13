@@ -21,7 +21,7 @@ function App() {
     store.dispatch(userLoad());
   });
   return (
-    <div className="relative scrollbar-hide font-f flex flex-col justify-start items-center gap-10">
+    <div className="relative scrollbar-hide font-f flex flex-col justify-start items-center">
       <Router>
         <Header />
 
